@@ -20,6 +20,9 @@ class Solution:
         while heap:
             dist,node=heapq.heappop(heap)
 
+            if dist > res[node]:
+                continue
+
             for child in adj[node]:
                 nde,wt=child
                 if dist+wt<res[nde]:
